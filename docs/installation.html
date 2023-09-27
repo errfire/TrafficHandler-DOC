@@ -86,19 +86,26 @@
 
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="traffic-handler-docker">Traffic Handler Docker</h1>
-<h2 id="beta-version-bitte-aktuell-nur-zu-testzwecken-nutzen-nicht-produktiv-schalten">BETA Version! Bitte aktuell nur zu Testzwecken nutzen. Nicht Produktiv schalten.</h2>
-<p>⚠️ Bitte bachte das es sich um eine BETA-Version handelt. Wir empfehlen die Nutzung  einer VPN-Verbindung.</p>
-<h2 id="informationen">Informationen</h2>
-<p>Das Ziel des Projekts ist es, das Fortschreiten der Digitalisierung im Feuerwehr- und Rettungswesen zu unterstützen. Besonders im Fokus stehen dabei kleine Einheiten, für die verfügbare Lösungen finanziell nicht tragbar sind. Die Software wird kostenlos zur Verfügung gestellt und läuft auf bestehender oder günstiger Hardware.</p>
-<p>Der Traffic Handler von ERR-Fire verkörpert ein innovatives System, das dazu konzipiert ist, Verkehrsbeeinträchtigungen, langfristige Baustellen und vergleichbare Hindernisse zu erfassen und transparent darzustellen. Durch die umfassende Dokumentation dieser Faktoren ermöglicht das System eine optimierte Routenplanung bereits im Vorfeld der Anfahrt zur Einsatzstelle. Ein essentieller Aspekt dieses Systems ist die Benutzerverwaltung, welche eine präzise Steuerung der Zugriffsrechte ermöglicht. Diese differenzierten Berechtigungen erlauben es, einzelnen Nutzern spezifische Schreib- oder ausschließlich Leserechte zuzuweisen. Hierdurch wird die Integrität der hinterlegten Daten gewährleistet und ein Höchstmaß an Sicherheit erreicht.</p>
-<p>Die Daten werden zentral in einer lokalen Datenbank gespeichert, wodurch Ihnen uneingeschränkte Kontrolle über Ihre Daten gewährt wird.</p>
-<h2 id="struktur">Struktur</h2>
-<p>Das Projekt bildet drei Strukturen.
-Einmal die API als eine Struktur, welche in Zukunft für weitere Dienste Schnittstellen bereitstellt.</p>
-<p>Die zweite Struktur bildet das Backend, welches die Endpunkte pro Service als auch die Logik innehat.</p>
-<p>Die dritte und letzte Struktur ist das Webfrontend.</p>
-<p><img src="../img/struktur.png" alt="Die Struktur" /></p>
+                    <h3 id="hinweis">Hinweis</h3>
+<p>Wir empfehlen die Nutzung des Ordners <em>opt</em> jedoch ist das die frei Wahl jedermanns.
+Innerhalb der Dokumentation bedienen wir uns der einfachheitshalber an Beispielen, die innerhalb des <em>opt</em> Ordner stattfinden.</p>
+<h3 id="vorbereitung">Vorbereitung</h3>
+<p>Zuerst muss ein Ordner innerhalb des Ordner <em>opt</em> erstellt werden. Der Ordnername lautet
+<em>TrafficHandler</em></p>
+<p><code>mkdir TrafficHandler</code></p>
+<p>Im Folgenden laden Sie das aus dem GitHub-Repository das Release Paket herunter.
+Das kann mittels der Downloadfunktion der Webseite realisiert werden, als auch auf dem Server mittels cUrl.</p>
+<p>Wechseln Sie zuerst ins angelegte Verzeichnis:</p>
+<p><code>cd /opt/TrafficHandler</code></p>
+<p>Führen Sie nun den cUrl Befehl aus.</p>
+<p><em>Bitte achten Sie auf die Version innerhalb des Links!</em></p>
+<p><code>curl -LO https://github.com/muffti-112/Traffic-Handler-Docker/releases/download/0.5.0-Beta/traffichandler-docker.tar </code></p>
+<p>Entpacken Sie nun das im Verzeichnis befindliche <em>traffichandler-docker.tar</em></p>
+<p><code>tar -xvf traffichandler-docker.tar</code></p>
+<h3 id="start-des-systems">Start des Systems</h3>
+<p>Damit wäre das System fertig und bereit zum starten. Hierzu folgenden Befehl ausführen.</p>
+<p><code>docker-compose up -d</code></p>
+<p>Wir empfehlen vor dem Start die Konfiguration des Systems. Diese finden Sie auf der Seite Konfigurationen. </p>
                 </section>
 
             </div>

@@ -86,19 +86,115 @@
 
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="traffic-handler-docker">Traffic Handler Docker</h1>
-<h2 id="beta-version-bitte-aktuell-nur-zu-testzwecken-nutzen-nicht-produktiv-schalten">BETA Version! Bitte aktuell nur zu Testzwecken nutzen. Nicht Produktiv schalten.</h2>
-<p>⚠️ Bitte bachte das es sich um eine BETA-Version handelt. Wir empfehlen die Nutzung  einer VPN-Verbindung.</p>
-<h2 id="informationen">Informationen</h2>
-<p>Das Ziel des Projekts ist es, das Fortschreiten der Digitalisierung im Feuerwehr- und Rettungswesen zu unterstützen. Besonders im Fokus stehen dabei kleine Einheiten, für die verfügbare Lösungen finanziell nicht tragbar sind. Die Software wird kostenlos zur Verfügung gestellt und läuft auf bestehender oder günstiger Hardware.</p>
-<p>Der Traffic Handler von ERR-Fire verkörpert ein innovatives System, das dazu konzipiert ist, Verkehrsbeeinträchtigungen, langfristige Baustellen und vergleichbare Hindernisse zu erfassen und transparent darzustellen. Durch die umfassende Dokumentation dieser Faktoren ermöglicht das System eine optimierte Routenplanung bereits im Vorfeld der Anfahrt zur Einsatzstelle. Ein essentieller Aspekt dieses Systems ist die Benutzerverwaltung, welche eine präzise Steuerung der Zugriffsrechte ermöglicht. Diese differenzierten Berechtigungen erlauben es, einzelnen Nutzern spezifische Schreib- oder ausschließlich Leserechte zuzuweisen. Hierdurch wird die Integrität der hinterlegten Daten gewährleistet und ein Höchstmaß an Sicherheit erreicht.</p>
-<p>Die Daten werden zentral in einer lokalen Datenbank gespeichert, wodurch Ihnen uneingeschränkte Kontrolle über Ihre Daten gewährt wird.</p>
-<h2 id="struktur">Struktur</h2>
-<p>Das Projekt bildet drei Strukturen.
-Einmal die API als eine Struktur, welche in Zukunft für weitere Dienste Schnittstellen bereitstellt.</p>
-<p>Die zweite Struktur bildet das Backend, welches die Endpunkte pro Service als auch die Logik innehat.</p>
-<p>Die dritte und letzte Struktur ist das Webfrontend.</p>
-<p><img src="../img/struktur.png" alt="Die Struktur" /></p>
+                    <h1 id="erste-schritte">Erste Schritte</h1>
+<h2 id="login">Login</h2>
+<p>Beim Aufrufen des TrafficHandler, landet man auf der Login-Seite.</p>
+<p>Mit folgenden Standard-Benutzerdaten kann man sich nun anmelden.</p>
+<p><code>Benutzername: poweruser</code> <br>
+<code>Passwort: powerAdmin</code></p>
+<p>⚠️ Der Administrator wird aufgefordert, unmittelbar nach dem Einloggen das Passwort zu erneuern.</p>
+<p><img src="../img/login.png" alt="login" />
+<br></br></p>
+<h2 id="standard-ansicht">Standard Ansicht</h2>
+<p>Nach der erfolgreichen Anmeldung, laden Sie auf der Startseite.</p>
+<p>Diese besteht aus dem Menüband, wo Sie in die einzelnen Seiten wechseln können, darüberhianus können Sie
+den aktuellen User sehen, mit dem Sie angemeldet sind als auch der zugewiesenen Rolle.</p>
+<p><br></br>
+Auf der Startseite wird darüberhinaus eine <em>OpenStreetMap Karte</em> angezeigt, die innerhalb den aktuellen
+Standort inform eines Markes aufzeigt. Aktive Verkehrslagen, werden mit einem roten Warnsymbol angezeigt.
+Beim Anklicken der Objekte erhält man weitere Informationen diesbezüglich.</p>
+<p>Unter dem Punkt <em>Aktive Verkehrslage</em> sind alle eingetragene Verkehrslagen hinterlegt.
+Dabei werden folgende Informationen dargestellt.</p>
+<ul>
+<li>Titel</li>
+<li>Adresse</li>
+<li>Startdatum</li>
+<li>Enddatum</li>
+<li>Beschreibung</li>
+<li>Koordinaten</li>
+</ul>
+<p><img src="../img/mainview.png" alt="Main" />
+<br></br></p>
+<h2 id="neue-verkehrslage-hinzufgen">Neue Verkehrslage hinzufügen</h2>
+<p>Innerhalb dieser Seite haben Sie die Möglichkeit neue Verkehrslagen einzutragen. Aktuell ist dies
+nur über die Webseite möglich.
+Perspektivisch soll auch über bereitgestellte Schnittstelle auch Fremdsysteme angebunden werden können.
+<br></br>
+Es handelt sich bei allen Feldern um Pflichtfelder.</p>
+<p>Für die Koordinaten eingabe, zur Darstellung auf der Karte, hat sich folgende Seite als praktikabel geeignet.
+<br></br>
+(<a href="https://www.gpskoordinaten.de/">https://www.gpskoordinaten.de/</a>)</p>
+<p><br></br></p>
+<p><img src="../img/entry.png" alt="New Entry" />
+<br></br></p>
+<h2 id="verkehrslage-lschen">Verkehrslage Löschen</h2>
+<p>Verkehrslagen löschen sich nach Ablauf des Enddatum nicht selbständig. Dies ist als Feature in einer höheren Version vorgesehen.</p>
+<p>Dies kann über diese Seite realisiert werden. Das geht entsprechend nur mit benutzern welche
+die Berechtigungsgruppe (Admin oder Editor) zugewiesen haben.</p>
+<p><img src="../img/delte.png" alt="Delet" />
+<br></br></p>
+<h2 id="benutzerverwaltung">Benutzerverwaltung</h2>
+<p>Innerhalb der Anwendungen können weitere User erstellt bzw. gelöscht werden, Passwörter geändert als auch Benutzergruppen angepasst werden.
+Die Benutzerverwaltung ist dabei den User(n) mit der Rolle <em>Admin</em> vorbehalten.</p>
+<p>Anbei finden Sie eine Übersicht über die Rollenberechtigung.</p>
+<p>⚠️ Gehen Sie sorgfältig mit der Rollenvergabe um.</p>
+<p><br></br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Rolle/<br/>Möglichkeiten</strong></th>
+<th style="text-align: center;"><strong>Admin</strong></th>
+<th style="text-align: center;"><strong>Editor</strong></th>
+<th style="text-align: center;"><strong>Viewer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Zugang zum System</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Erstellen neuer Verkehrslagen</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr>
+<td style="text-align: left;">Verkehrslagen löschen</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr>
+<td style="text-align: left;">Übersicht Benutzer</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr>
+<td style="text-align: left;">Anpassung Benutzer</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr>
+<td style="text-align: left;">Systemdaten</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alarmsystem</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+<td style="text-align: center;">o</td>
+</tr>
+</tbody>
+</table>
+<p><br></br></p>
+<p><img src="../img/usermanagment.png" alt="User" /></p>
                 </section>
 
             </div>
