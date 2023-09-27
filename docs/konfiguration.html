@@ -86,19 +86,62 @@
 
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="traffic-handler-docker">Traffic Handler Docker</h1>
-<h2 id="beta-version-bitte-aktuell-nur-zu-testzwecken-nutzen-nicht-produktiv-schalten">BETA Version! Bitte aktuell nur zu Testzwecken nutzen. Nicht Produktiv schalten.</h2>
-<p>⚠️ Bitte bachte das es sich um eine BETA-Version handelt. Wir empfehlen die Nutzung  einer VPN-Verbindung.</p>
-<h2 id="informationen">Informationen</h2>
-<p>Das Ziel des Projekts ist es, das Fortschreiten der Digitalisierung im Feuerwehr- und Rettungswesen zu unterstützen. Besonders im Fokus stehen dabei kleine Einheiten, für die verfügbare Lösungen finanziell nicht tragbar sind. Die Software wird kostenlos zur Verfügung gestellt und läuft auf bestehender oder günstiger Hardware.</p>
-<p>Der Traffic Handler von ERR-Fire verkörpert ein innovatives System, das dazu konzipiert ist, Verkehrsbeeinträchtigungen, langfristige Baustellen und vergleichbare Hindernisse zu erfassen und transparent darzustellen. Durch die umfassende Dokumentation dieser Faktoren ermöglicht das System eine optimierte Routenplanung bereits im Vorfeld der Anfahrt zur Einsatzstelle. Ein essentieller Aspekt dieses Systems ist die Benutzerverwaltung, welche eine präzise Steuerung der Zugriffsrechte ermöglicht. Diese differenzierten Berechtigungen erlauben es, einzelnen Nutzern spezifische Schreib- oder ausschließlich Leserechte zuzuweisen. Hierdurch wird die Integrität der hinterlegten Daten gewährleistet und ein Höchstmaß an Sicherheit erreicht.</p>
-<p>Die Daten werden zentral in einer lokalen Datenbank gespeichert, wodurch Ihnen uneingeschränkte Kontrolle über Ihre Daten gewährt wird.</p>
-<h2 id="struktur">Struktur</h2>
-<p>Das Projekt bildet drei Strukturen.
-Einmal die API als eine Struktur, welche in Zukunft für weitere Dienste Schnittstellen bereitstellt.</p>
-<p>Die zweite Struktur bildet das Backend, welches die Endpunkte pro Service als auch die Logik innehat.</p>
-<p>Die dritte und letzte Struktur ist das Webfrontend.</p>
-<p><img src="../img/struktur.png" alt="Die Struktur" /></p>
+                    <h2 id="erste-konfiguration">Erste Konfiguration</h2>
+<p>Der TrafficHandler kann entsprechend Konfiguriert werden.</p>
+<p>Hierzu befindet sich im folgenden Verzeichnis</p>
+<p><code>opt/TrafficHandler/traffic_handler/conf</code> </p>
+<p>eine <em>settings.cfg</em> Datei.</p>
+<p>Diese sieht im Standard wie folgt aus:</p>
+<pre><code>#ERR-Fire Traffic Handler Settings
+
+#SSL
+#To enable an encrypted connection via SSL, the application requires a certificate and key.
+#Please enter here the full name for cert and key e.g. server.key and server.crt
+useSSL ="True"
+
+cert = "certification/server.crt"
+key = "certification/server.key"
+
+#Host IP or FQDN
+host = "0.0.0.0"
+
+# SSL Port. Default HTTPS-Port is 443
+# If useSSL is of "False" please use unsecure Port, like 80, 8181 ...
+port = "443"
+
+#Customized
+
+#Add here Youre City- or Instancename.
+city= "Deine Stadt" </code></pre>
+<p><br></p>
+<h4 id="usessl">useSSL</h4>
+<p><em>Default = true</em></p>
+<p>Hier kann die verschlüsselte Kommunikation aktiviert werden. Dafür ist innerhalb des Images ein SelfSign Zertifikat hinterlegt.
+Dies kann prinzipell ausgetauscht werden, hierzu ist jedoch Wissen im Bereich Docker erforderlich.</p>
+<h4 id="host">host</h4>
+<p><em>Default = 0.0.0.0</em></p>
+<p>Hier kann die IP-Adresse oder der Hostname des System eingetragen werden.</p>
+<h4 id="port">port</h4>
+<p><em>Default = 443</em></p>
+<p>Hier kann ein Port definiert werden, worauf dann die Anwendung kommuniziert.
+Soll der Port 80 oder 443 nicht genutzt werden, so muss ebenfalls die  <code>docker-compose.yml</code> angepasst werden.
+Hier muss innerhalb der ports der entsprechend neue Port definiert werden.</p>
+<p>⚠️ Sollte die Server Firewall aktiv sein, sorgen Sie dafür, dass die entsprechenden Ports auch nach außen zugänglich sind.</p>
+<h4 id="city">city</h4>
+<p><em>Default = Deine Stadt</em></p>
+<p>Hier kann ein Stadtname oder anderweitige Namen eingetragen werden. Diese werden im Login-Screen angezeigt, als auch im Footer
+und auf der Systemseite. So kann man bei mehreren Systemen, diese direkt voneinander unterscheiden.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="logs">Logs</h3>
+<p>Bei besonderen Ereignissen innerhalb der Anwendung, werden Logeinträge erstellt.
+Diese werden in einem <em>main.log</em> festgehalten. Das Logfile wird im Standard aus dem Container rauskopiert und auf dem Server Lokal gespeichert.</p>
+<p>Das Logfile finden Sie lokal im folgenden Verzeichnisse</p>
+<p><code>opt/TrafficHandler/traffic_handler/logs</code> </p>
+<h3 id="datenbank">Datenbank</h3>
+<p>Die Daten, welche über die Webseite aufrufbar sind, werden in einer lokalen Datenbank gespeichert.
+Es handelt sich hierbei um eine SQLite Datenbank. Diese wird im Standard aus dem Container rauskopiert und auf dem Server Lokal gespeichert.</p>
+<p>Die Datenbank finden Sie lokal im folgenden Verzeichnisse</p>
+<p><code>opt/TrafficHandler/traffic_handler/database</code> </p>
                 </section>
 
             </div>
