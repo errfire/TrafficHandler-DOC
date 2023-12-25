@@ -91,27 +91,32 @@
 
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h3 id="hinweis">Hinweis</h3>
-<p>Wir empfehlen die Nutzung des Ordners <em>opt</em> jedoch ist das die frei Wahl jedermanns.
-Innerhalb der Dokumentation bedienen wir uns der einfachheitshalber an Beispielen, die innerhalb des <em>opt</em> Ordner stattfinden.</p>
-<p>⚠️ Bitte erfüllen Sie vorab die Voraussetzungen!</p>
-<h3 id="vorbereitung">Vorbereitung</h3>
-<p>Zuerst muss ein Ordner innerhalb des Ordner <em>opt</em> erstellt werden. Der Ordnername lautet
-<em>TrafficHandler</em></p>
-<p><code>mkdir TrafficHandler</code></p>
-<p>Im Folgenden laden Sie das aus dem GitHub-Repository das Release Paket herunter.
-Das kann mittels der Downloadfunktion der Webseite realisiert werden, als auch auf dem Server mittels cUrl.</p>
-<p>Wechseln Sie zuerst ins angelegte Verzeichnis:</p>
-<p><code>cd /opt/TrafficHandler</code></p>
-<p>Führen Sie nun den cUrl Befehl aus.</p>
-<p><em>Bitte achten Sie auf die Version innerhalb des Links!</em></p>
-<p><code>curl -LO https://github.com/muffti-112/Traffic-Handler-Docker/releases/download/0.7.0-Beta/traffichandler-docker.tar </code></p>
-<p>Entpacken Sie nun das im Verzeichnis befindliche <em>traffichandler-docker.tar</em></p>
-<p><code>tar -xvf traffichandler-docker.tar</code></p>
-<h3 id="start-des-systems">Start des Systems</h3>
-<p>Damit wäre das System fertig und bereit zum starten. Hierzu folgenden Befehl ausführen.</p>
-<p><code>docker-compose up -d</code></p>
-<p>Wir empfehlen vor dem Start die Konfiguration des Systems. Diese finden Sie auf der Seite Konfigurationen. </p>
+                    <h2 id="iam---identity-amp-access-management">IAM - Identity &amp; Access Management</h2>
+<p>Wie innerhalb des Kapitels &quot;Erste Konfiguration&quot; erwähnt, besteht die Möglichkeit, dass System an ein IAM für die Authentifizierung anzubinden.</p>
+<p>Hierzu befindet sich im folgenden Verzeichnis</p>
+<p><code>opt/TrafficHandler/traffic_handler/conf</code> </p>
+<p>eine <em>iam.env</em> Datei.</p>
+<p>Diese sieht im Standard wie folgt aus:</p>
+<pre><code>Auth-Service=Auth0
+IAM_CLIENT_ID={Client-ID}
+IAM_CLIENT_SECRET={Client-Secret}
+IAM_DOMAIN={IAM-Domain}
+</code></pre>
+<p><br></p>
+<h4 id="auth-service">Auth-Service</h4>
+<p>Dieser Parameter kann dazu genutzt werden, seinem IAM einen Namen zu geben. Diese Name taucht ebenfalls in der Loginmaske auf, wenn sich der User Authentifizieren möchte.</p>
+<h4 id="iam_client_id">IAM_CLIENT_ID</h4>
+<p>Hier muss die vom IAM bereitgestellte Client-ID eingetragen werden.</p>
+<h3 id="iam_client_secret">IAM_CLIENT_SECRET</h3>
+<p>Hier muss die vom IAM bereitgestellte Client-Secret eingetragen werden.</p>
+<h4 id="iam_domain">IAM_DOMAIN</h4>
+<p>Hier muss die vom IAM bereitgestellte Domain eingetragen werden.</p>
+<h4 id="loginbasic">LOGINBASIC</h4>
+<p>Bitte bedenken Sie, dass innerhalb der settings.cfg zu finden unter:
+<code>opt/TrafficHandler/traffic_handler/conf</code> </p>
+<p>der Parameter LOGINBASIC auf <code>False</code> gesetzt werden muss, damit das Login-Modul auf Authentifizierung über IAM umschaltet.</p>
+<h3 id="anmeldemaske-ber-iam">Anmeldemaske über IAM</h3>
+<p><img src="../img/iam.png" alt="IAM" /></p>
                 </section>
 
             </div>

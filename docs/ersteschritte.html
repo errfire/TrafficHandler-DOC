@@ -6,16 +6,16 @@
 
         <title>TrafficHandler</title>
 
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/highlight.tomorrow-night.css">
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/main.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/highlight.tomorrow-night.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="https://muffti-112.github.io/TrafficHandler-DOC/">
+            <a class="navbar-brand" href="https://doc.err-fire.de/">
                 TrafficHandler
                 <small class="hidden-xs hidden-sm">
                     Dokumentation.
@@ -35,38 +35,43 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                                                     <p class="text-muted">
-                                Doku
+                                Dokumentation
                             </p>
 
                             <ul class="nav nav-pills nav-stacked">
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/index.html">
+                                        <a href="https://doc.err-fire.de/docs/index.html">
                                             Home
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/voraussetzung.html">
+                                        <a href="https://doc.err-fire.de/docs/voraussetzung.html">
                                             Voraussetzungen
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/installation.html">
+                                        <a href="https://doc.err-fire.de/docs/installation.html">
                                             Installation
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/konfiguration.html">
+                                        <a href="https://doc.err-fire.de/docs/konfiguration.html">
                                             Konfiguration - Troubleshooting
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/ersteschritte.html">
+                                        <a href="https://doc.err-fire.de/docs/iam.html">
+                                            IAM - Identity & Access Management
+                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="https://doc.err-fire.de/docs/ersteschritte.html">
                                             Erste Schritte
                                         </a>
                                     </li>
                                                             </ul>
                                                     <p class="text-muted">
-                                Other topics
+                                Externe Links
                             </p>
 
                             <ul class="nav nav-pills nav-stacked">
@@ -96,28 +101,38 @@
 <p><img src="../img/login.png" alt="login" />
 <br></br></p>
 <h2 id="standard-ansicht">Standard Ansicht</h2>
-<p>Nach der erfolgreichen Anmeldung, laden Sie auf der Startseite.</p>
-<p>Diese besteht aus dem Menüband, wo Sie in die einzelnen Seiten wechseln können, darüberhianus können Sie
+<p>Nach der erfolgreichen Anmeldung, landen Sie auf der Startseite.</p>
+<p>Diese besteht aus dem Menüband, wo Sie in unter den einzelnen Menüpunkten wechseln können, darüber hinaus können Sie
 den aktuellen User sehen, mit dem Sie angemeldet sind als auch der zugewiesenen Rolle.</p>
+<h3 id="update-server">Update Server</h3>
+<p>Die in der Fußzeile angezeigte Wolke, entweder mit der Farbe &quot;grün&quot; oder &quot;grau&quot;, gibt die Verbindung zum Update Server.
+Der aus dem Internet erreichbare Update Server stellt der Anwendung die aktuell verfügbare Versionsnummer bereit.
+Die Anwendung prüft dann Lokal, ob die Version vom Update Server höher ist als die aktuell genutzte.
+Sollte dies der Fall sein, erhalten Sie auf der Startseite eine Information darüber, dass eine neue Version verfügbar ist.</p>
+<p>⚠️ Die Versionsnummer Ihrer Anwendung wird zu keinem Zeitpunkt an uns übermittelt. <br>
+⚠️ Wir informieren Sie auch über anderem Wege, wenn eine neue Version verfügbar ist, so ist sichergestellt, dass der Server nicht zwangsläufig eine Verbidnung
+zum Internet haben muss.</p>
 <p><br></br>
-Auf der Startseite wird darüberhinaus eine <em>OpenStreetMap Karte</em> angezeigt, die innerhalb den aktuellen
-Standort inform eines Markes aufzeigt. Aktive Verkehrslagen, werden mit einem roten Warnsymbol angezeigt.
-Beim Anklicken der Objekte erhält man weitere Informationen diesbezüglich.</p>
+Auf der Startseite wird darüber hinaus eine <em>OpenStreetMap Karte</em> angezeigt, die den aktuellen
+Standort inform eines Markes aufzeigt. Aktive Verkehrslagen, werden mit einem entsprechendem Verkehrszeichen angezeigt.
+Beim Anklicken der Objekte erhält man eine Kurzinformation über die Verkehrslage.</p>
 <p>Unter dem Punkt <em>Aktive Verkehrslage</em> sind alle eingetragene Verkehrslagen hinterlegt.
 Dabei werden folgende Informationen dargestellt.</p>
 <ul>
+<li>Art</li>
 <li>Titel</li>
-<li>Adresse</li>
 <li>Startdatum</li>
 <li>Enddatum</li>
 <li>Beschreibung</li>
-<li>Koordinaten</li>
+<li>Koordinaten
+<br> </br></li>
 </ul>
 <p><img src="../img/mainview.png" alt="Main" />
 <br></br></p>
 <h2 id="neue-verkehrslage-hinzufgen">Neue Verkehrslage hinzufügen</h2>
-<p>Innerhalb dieser Seite haben Sie die Möglichkeit neue Verkehrslagen einzutragen. Aktuell ist dies
-nur über die Webseite möglich.
+<p>Innerhalb dieser Seite haben Sie die Möglichkeit neue Verkehrslagen einzutragen.
+<br>
+⚠️ Aktuell ist dies nur über die Webseite möglich.
 Perspektivisch soll auch über bereitgestellte Schnittstelle auch Fremdsysteme angebunden werden können.
 <br></br>
 Es handelt sich bei allen Feldern um Pflichtfelder.</p>
@@ -127,13 +142,14 @@ Es handelt sich bei allen Feldern um Pflichtfelder.</p>
 <p><br></br></p>
 <p><img src="../img/entry.png" alt="New Entry" />
 <br></br></p>
-<h2 id="verkehrslage-lschen">Verkehrslage Löschen</h2>
-<p>Verkehrslagen löschen sich nach Ablauf des Enddatum nicht selbständig. Dies ist als Feature in einer höheren Version vorgesehen.</p>
+<h2 id="verkehrslage-lschen">Verkehrslage löschen</h2>
+<p>Verkehrslagen löschen sich nach Ablauf des Enddatum nicht selbständig.</p>
 <p>Dies kann über diese Seite realisiert werden. Das geht entsprechend nur mit benutzern welche
 die Berechtigungsgruppe (Admin oder Editor) zugewiesen haben.</p>
 <p><img src="../img/delte.png" alt="Delet" />
 <br></br></p>
 <h2 id="benutzerverwaltung">Benutzerverwaltung</h2>
+<p>⚠️ Hier wird die lokale Benutzerverwaltung erklärt. <em>NICHT</em> über IAM!</p>
 <p>Innerhalb der Anwendungen können weitere User erstellt bzw. gelöscht werden, Passwörter geändert als auch Benutzergruppen angepasst werden.
 Die Benutzerverwaltung ist dabei den User(n) mit der Rolle <em>Admin</em> vorbehalten.</p>
 <p>Anbei finden Sie eine Übersicht über die Rollenberechtigung.</p>
@@ -191,10 +207,25 @@ Die Benutzerverwaltung ist dabei den User(n) mit der Rolle <em>Admin</em> vorbeh
 <td style="text-align: center;">o</td>
 <td style="text-align: center;">o</td>
 </tr>
+<tr>
+<td style="text-align: left;">Ereignisprotokoll</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">o</td>
+<td style="text-align: center;">o</td>
+</tr>
 </tbody>
 </table>
 <p><br></br></p>
 <p><img src="../img/usermanagment.png" alt="User" /></p>
+<h2 id="ereignisprotokoll">Ereignisprotokoll</h2>
+<p>⚠️ Das Ereignisprotokoll und das Log ist auf Englisch!</p>
+<p>Das Ereignisprotokoll bietet eine übersichtliche Darstellung der durchgeführten Aktionen innerhalb der Anwendung.
+Hierbei werden sämtliche relevanten Informationen erfasst und auf dieser Seite präsentiert.
+Autorisierte Benutzer haben die Möglichkeit, nach bestimmten Ereignissen zu suchen, die Liste nach ihren Präferenzen zu sortieren und eine strukturierte Darstellung zu wählen, um die gewünschten Informationen schnell und präzise zu finden.</p>
+<p>Parallel zum Ereignisprotokoll wird ein Logfile erstellt <em>main.log</em>, das sämtliche Anpassungen in einer Datei festhält.
+Diese Datei bietet eine umfassende Übersicht über alle durchgeführten Änderungen und stellt sicher, dass jede Modifikation in der Anwendung dokumentiert wird.</p>
+<p><br></br></p>
+<p><img src="../img/ereignisprotokoll.png" alt="Ereignisprotokoll" /></p>
                 </section>
 
             </div>

@@ -6,16 +6,16 @@
 
         <title>TrafficHandler</title>
 
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/highlight.tomorrow-night.css">
-        <link rel="stylesheet" href="https://muffti-112.github.io/TrafficHandler-DOC/css/main.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/highlight.tomorrow-night.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="https://muffti-112.github.io/TrafficHandler-DOC/">
+            <a class="navbar-brand" href="https://doc.err-fire.de/">
                 TrafficHandler
                 <small class="hidden-xs hidden-sm">
                     Dokumentation.
@@ -35,38 +35,43 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                                                     <p class="text-muted">
-                                Doku
+                                Dokumentation
                             </p>
 
                             <ul class="nav nav-pills nav-stacked">
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/index.html">
+                                        <a href="https://doc.err-fire.de/docs/index.html">
                                             Home
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/voraussetzung.html">
+                                        <a href="https://doc.err-fire.de/docs/voraussetzung.html">
                                             Voraussetzungen
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/installation.html">
+                                        <a href="https://doc.err-fire.de/docs/installation.html">
                                             Installation
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/konfiguration.html">
+                                        <a href="https://doc.err-fire.de/docs/konfiguration.html">
                                             Konfiguration - Troubleshooting
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://muffti-112.github.io/TrafficHandler-DOC/docs/ersteschritte.html">
+                                        <a href="https://doc.err-fire.de/docs/iam.html">
+                                            IAM - Identity & Access Management
+                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="https://doc.err-fire.de/docs/ersteschritte.html">
                                             Erste Schritte
                                         </a>
                                     </li>
                                                             </ul>
                                                     <p class="text-muted">
-                                Other topics
+                                Externe Links
                             </p>
 
                             <ul class="nav nav-pills nav-stacked">
@@ -112,7 +117,12 @@ port = "443"
 #Customized
 
 #Add here Youre City- or Instancename.
-city= "Deine Stadt" </code></pre>
+city= "Deine Stadt" 
+
+#Active here the login with password and username. If the value should stand on False, then to OAuth authentication is changed.
+#The OAuth must be configured below.
+
+LOGINBASIC= "True"</code></pre>
 <p><br></p>
 <h4 id="usessl">useSSL</h4>
 <p><em>Default = true</em></p>
@@ -131,16 +141,21 @@ Hier muss innerhalb der ports der entsprechend neue Port definiert werden.</p>
 <p><em>Default = Deine Stadt</em></p>
 <p>Hier kann ein Stadtname oder anderweitige Namen eingetragen werden. Diese werden im Login-Screen angezeigt, als auch im Footer
 und auf der Systemseite. So kann man bei mehreren Systemen, diese direkt voneinander unterscheiden.</p>
+<h4 id="loginbasic">LOGINBASIC</h4>
+<p><em>Default = True</em></p>
+<p>Hierrüber wird die Login Methode ausgewählt. Der TrafficHandler kann sowohl Authentifizierung über Benuterzname und Passwort, als auch über ein IAM-System (Identity &amp; Access Management)
+angebunden werden. Die Anbindung ans IAM setzt Fachwissen voraus. Innerhalb dieser Dokumentation, wird dies nicht explizit erklärt.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="logs">Logs</h3>
 <p>Bei besonderen Ereignissen innerhalb der Anwendung, werden Logeinträge erstellt.
 Diese werden in einem <em>main.log</em> festgehalten. Das Logfile wird im Standard aus dem Container rauskopiert und auf dem Server Lokal gespeichert.</p>
-<p>Das Logfile finden Sie lokal im folgenden Verzeichnisse:</p>
+<p>Für Benutzer mit der Rolle ADMIN, steht innerhalb der Anwednung ein Ereignisprotokoll zur Verfügung. Somit ist kein Zugang zum Server zwingend erforderlich.</p>
+<p>Das Logfile finden Sie lokal im folgenden Verzeichnisse</p>
 <p><code>opt/TrafficHandler/traffic_handler/logs</code> </p>
 <h3 id="datenbank">Datenbank</h3>
 <p>Die Daten, welche über die Webseite aufrufbar sind, werden in einer lokalen Datenbank gespeichert.
 Es handelt sich hierbei um eine SQLite Datenbank. Diese wird im Standard aus dem Container rauskopiert und auf dem Server Lokal gespeichert.</p>
-<p>Die Datenbank finden Sie lokal im folgenden Verzeichnisse:</p>
+<p>Die Datenbank finden Sie lokal im folgenden Verzeichnisse</p>
 <p><code>opt/TrafficHandler/traffic_handler/database</code> </p>
                 </section>
 
