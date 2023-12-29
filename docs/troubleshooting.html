@@ -96,40 +96,20 @@
 
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h3 id="hinweis">Hinweis</h3>
-<p>Wir empfehlen die Nutzung des Ordners <em>opt</em> jedoch ist das die frei Wahl jedermanns.
-Innerhalb der Dokumentation bedienen wir uns der einfachheitshalber an Beispielen, die innerhalb des <em>opt</em> Ordner stattfinden.</p>
-<p>⚠️ Bitte erfüllen Sie vorab die Voraussetzungen!</p>
-<h3 id="vorbereitung">Vorbereitung</h3>
-<p>Führen Sie nun den cUrl Befehl aus.</p>
-<p><em>Bitte achten Sie auf die Version innerhalb des Links!</em></p>
-<p><code>curl -LO https://github.com/muffti-112/Traffic-Handler-Docker/releases/download/0.7.0-Beta/traffichandler-docker.tar </code></p>
-<p>Entpacken Sie nun das im Verzeichnis befindliche <em>traffichandler-docker.tar</em></p>
-<p><code>tar -xvf traffichandler-docker.tar</code></p>
-<p>Sie sehen nun einen weiteren Ordner, mit dem Namen <em>traffichandler</em>.
-Der Aufbau der Ordnerstruktur spiegelt sich somit wie folgt wieder:</p>
-<pre><code>-&gt;opt
-        -&gt;traffichandler
-            -&gt;NGINX
-                -&gt;logs
-                -&gt;default
-                -&gt;conf
-                    -&gt;certification
-                    nginx.conf
-            -&gt;data
-                -&gt;traffic_handler
-                    -&gt;logs
-                    -&gt;database
-                    -&gt;data
-                    -&gt;conf
-                    -&gt;README
-            -&gt;docker-compose.yml
-            -&gt;LICENSE</code></pre>
-<h3 id="konfiguration">Konfiguration</h3>
-<p>Führen Sie nun die Konfiguration durch. Besuchen Sie dazu den Menüpunkt <em>Konfiguration</em>.</p>
-<h3 id="start-des-systems">Start des Systems</h3>
-<p>Damit wäre das System fertig und bereit zum starten. Hierzu folgenden Befehl ausführen.</p>
-<p><code>docker-compose -f /opt/traffichandler/docker-compose.yml up</code></p>
+                    <h2 id="troubleshooting">Troubleshooting</h2>
+<p>Hier entsteht eine kleine Ansammlung von nützlichen Tipps </p>
+<h3 id="logs">Logs</h3>
+<p>Bei besonderen Ereignissen innerhalb der Anwendung, werden Logeinträge erstellt.
+Diese werden in einem <em>main.log</em> festgehalten. Das Logfile wird im Standard aus dem Container rauskopiert und auf dem Server Lokal gespeichert.</p>
+<p>Für Benutzer mit der Rolle ADMIN, steht innerhalb der Anwendung ein Ereignisprotokoll zur Verfügung. Somit ist kein Zugang zum Server zwingend erforderlich.</p>
+<p>Das Logfile finden Sie lokal im folgenden Verzeichnisse</p>
+<p><code>opt/traffic_handler/data/traffic_handler/logs</code> </p>
+<h3 id="datenbank">Datenbank</h3>
+<p>Die Daten, welche über die Webseite aufrufbar sind, werden in einer lokalen Datenbank gespeichert.
+Es handelt sich hierbei um eine SQLite Datenbank. Diese wird im Standard aus dem Container rauskopiert und auf dem Server Lokal gespeichert.</p>
+<p>Die Datenbank finden Sie lokal im folgenden Verzeichnisse</p>
+<p><code>opt/traffic_handler/data/traffic_handler/database</code> </p>
+<p>⚠️ Es empfiehlt sich in regelmäßigen Abständen ein Backup durchzuführen. Die Anwendung müsste dafür beendet werden.</p>
                 </section>
 
             </div>

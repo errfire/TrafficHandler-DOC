@@ -6,16 +6,16 @@
 
         <title>TrafficHandler</title>
 
-        <link rel="stylesheet" href="https://doc.err-fire.de/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://doc.err-fire.de/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://doc.err-fire.de/css/highlight.tomorrow-night.css">
-        <link rel="stylesheet" href="https://doc.err-fire.de/css/main.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/highlight.tomorrow-night.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="https://doc.err-fire.de/">
+            <a class="navbar-brand" href="https://doc.err-fire.de/docs/">
                 TrafficHandler
                 <small class="hidden-xs hidden-sm">
                     Dokumentation.
@@ -40,33 +40,38 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/index.html">
+                                        <a href="https://doc.err-fire.de/docs/docs/index.html">
                                             Home
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/voraussetzung.html">
+                                        <a href="https://doc.err-fire.de/docs/docs/voraussetzung.html">
                                             Voraussetzungen
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/installation.html">
+                                        <a href="https://doc.err-fire.de/docs/docs/installation.html">
                                             Installation
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/konfiguration.html">
+                                        <a href="https://doc.err-fire.de/docs/docs/konfiguration.html">
                                             Konfiguration - Troubleshooting
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/ersteschritte.html">
+                                        <a href="https://doc.err-fire.de/docs/docs/ersteschritte.html">
                                             Erste Schritte
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/iam.html">
+                                        <a href="https://doc.err-fire.de/docs/docs/iam.html">
                                             IAM - Identity & Access Management
+                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="https://doc.err-fire.de/docs/docs/troubleshooting.html">
+                                            Troubleshooting
                                         </a>
                                     </li>
                                                             </ul>
@@ -94,7 +99,7 @@
                     <h3 id="iam---identity-amp-access-management">IAM - Identity &amp; Access Management</h3>
 <p>Wie innerhalb des Kapitels &quot;Erste Konfiguration&quot; erwähnt, besteht die Möglichkeit, dass System an ein IAM für die Authentifizierung anzubinden.</p>
 <p>Hierzu befindet sich im folgenden Verzeichnis</p>
-<p><code>opt/TrafficHandler/traffic_handler/conf</code> </p>
+<p><code>opt/traffic_handler/</code> </p>
 <p>eine <em>iam.env</em>  Datei.</p>
 <p>Diese sieht im Standard wie folgt aus:</p>
 <pre><code>Auth-Service=Auth0
@@ -113,7 +118,7 @@ IAM_DOMAIN={IAM-Domain}
 <p>Hier muss die vom IAM bereitgestellte Domain eingetragen werden.</p>
 <h4 id="loginbasic">LOGINBASIC</h4>
 <p>Bitte bedenken Sie, dass innerhalb der settings.cfg zu finden unter:
-<code>opt/TrafficHandler/traffic_handler/conf</code> </p>
+<code>opt/traffic_handler/traffic_handler/data/conf</code> </p>
 <p>der Parameter LOGINBASIC auf <code>False</code> gesetzt werden muss, damit das Login-Modul auf Authentifizierung über IAM umschaltet.</p>
 <h3 id="anmeldemaske-ber-iam">Anmeldemaske über IAM</h3>
 <p><img src="../img/iam.png" alt="IAM" /></p>
