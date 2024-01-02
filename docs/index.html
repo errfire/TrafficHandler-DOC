@@ -6,25 +6,22 @@
 
         <title>TrafficHandler</title>
 
-        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/highlight.tomorrow-night.css">
-        <link rel="stylesheet" href="https://doc.err-fire.de/docs/css/main.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/highlight.tomorrow-night.css">
+        <link rel="stylesheet" href="https://doc.err-fire.de/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="https://doc.err-fire.de/docs/">
+            <a class="navbar-brand" href="https://doc.err-fire.de/">
                 TrafficHandler
                 <small class="hidden-xs hidden-sm">
                     Dokumentation.
                 </small>
             </a>
 
-                            <a href="https://github.com/muffti-112/TrafficHandler-DOC">
-                    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-                </a>
             
         </header>
 
@@ -40,37 +37,37 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/index.html">
+                                        <a href="https://doc.err-fire.de/docs/index.html">
                                             Home
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/voraussetzung.html">
+                                        <a href="https://doc.err-fire.de/docs/voraussetzung.html">
                                             Voraussetzungen
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/installation.html">
+                                        <a href="https://doc.err-fire.de/docs/installation.html">
                                             Installation
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/konfiguration.html">
-                                            Konfiguration - Troubleshooting
+                                        <a href="https://doc.err-fire.de/docs/konfiguration.html">
+                                            Konfiguration
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/ersteschritte.html">
+                                        <a href="https://doc.err-fire.de/docs/ersteschritte.html">
                                             Erste Schritte
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/iam.html">
+                                        <a href="https://doc.err-fire.de/docs/iam.html">
                                             IAM - Identity & Access Management
                                         </a>
                                     </li>
                                                                     <li class="">
-                                        <a href="https://doc.err-fire.de/docs/docs/troubleshooting.html">
+                                        <a href="https://doc.err-fire.de/docs/troubleshooting.html">
                                             Troubleshooting
                                         </a>
                                     </li>
@@ -83,11 +80,6 @@
                                                                     <li class="">
                                         <a href="https://traffichandler.de">
                                             Projektseite
-                                        </a>
-                                    </li>
-                                                                    <li class="">
-                                        <a href="https://github.com/muffti-112/TrafficHandler-DOC">
-                                            GitHub
                                         </a>
                                     </li>
                                                             </ul>
@@ -121,7 +113,7 @@ der effizienten Nutzung von Systemressourcen und der einfachen Handhabung von Co
 Die Konfiguration erfolgt in einer einzigen Datei, was die Bereitstellung und Skalierung von Anwendungen vereinfacht.
 Mit Docker Compose können Sie den gesamten Anwendungsstack, bestehend aus verschiedenen Diensten, Umgebungsvariablen,
 Netzwerken und Volumes, in einer einzigen docker-compose.yml-Datei beschreiben.</p>
-<h3 id="docker-aufbau-err-fire">Docker Aufbau ERR-FIRE</h3>
+<h3 id="docker-aufbau-traffichandler">Docker Aufbau TrafficHandler</h3>
 <p><img src="../img/docker-aufbau.png" alt="Docker-Aufbau" /></p>
 <h3 id="aufabu-innerhalb-der-anwendung">Aufabu innerhalb der Anwendung</h3>
 <p><img src="../img/struktur.png" alt="Die Struktur" /></p>
@@ -131,7 +123,7 @@ Skalierbarkeit und Effizienz bekannt ist.
 Nginx bietet eine einfache Konfigurationssprache und kann sowohl als Webserver für statische Inhalte als auch als Reverse Proxy
 für den Umgang mit dynamischen Anfragen dienen.
 Durch seine ereignisgesteuerte Architektur kann Nginx Tausende von gleichzeitigen Verbindungen effizient verarbeiten.</p>
-<h3 id="nutzen-innerhalb-des-traffichandler">Nutzen innerhalb des TrafficHandler</h3>
+<h3 id="nginx-innerhalb-traffichandler">Nginx innerhalb TrafficHandler</h3>
 <p>Wir empfehlen und stellen auch in unserer Konfiguration Nginx bereit. Nginx dient als Reverse Proxy für unsere Anwendung und übernimmt auch
 die Verschlüsselte TLS Kommunikation zwischen Client und dem Server.
 So stellen wir sicher, dass ein bereits etabliertes und sicheres System die Kommunikation nach außen übernimmt.
